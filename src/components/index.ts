@@ -1,1 +1,2 @@
-export { default as PasswordStrength } from './tailwindPasswordStrength';
+export { default as TailwindPasswordStrength } from './tailwindPasswordStrength';
+// Add other exports as needed

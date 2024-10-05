@@ -1,31 +1,33 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import './App.css';
-import TailwindPasswordStrength from './components/tailwindPasswordStrength'; // Make sure to import it correctly
+import TailwindPasswordStrength from './components/tailwindPasswordStrength';
 
 function App() {
-  const { register, formState: { errors }, watch } = useForm();
-  // Watch the password input
-  const password = watch("password");
+  const [password, setPassword] = useState("");
 
-  const handlePasswordChange = (password: any) => {
-    console.log("New password:", password);
+  const handlePasswordChange = (newPassword: string) => {
+    setPassword(newPassword);
+    console.log("Current Password: ", newPassword);
   };
 
   return (
-    <div className="App p-8">
-      <h1>Testing Password Strength Component</h1>
-      <TailwindPasswordStrength
-        error={false}
-        passwordCriteria={{ minLength: 10, hasUpperCase: true, hasSpecialChar: true }}
-        criteriaMessages={{
-          minLength: "Password must be at least 10 characters.",
-          hasUpperCase: "Password needs at least one uppercase letter.",
-          hasSpecialChar: "A special character is recommended."
-        }}
-        onChange={handlePasswordChange}
-      />
-    </div>
+    <>
+      <div>
+        <h1>Testing Password Strength Component</h1>
+        <TailwindPasswordStrength
+          error={false}
+          passwordCriteria={{ minLength: 10, hasUpperCase: true, hasSpecialChar: true }}
+          criteriaMessages={{
+            minLength: "Password must be at least 10 characters.",
+            hasUpperCase: "Password needs at least one uppercase letter.",
+            hasSpecialChar: "A special character is recommended."
+          }}
+          onChange={handlePasswordChange}
+        />
+        {/* Display the current password below */}
+        <p className="mt-4">Current Password: {password}</p>
+      </div>
+    </>
   );
 }
 
