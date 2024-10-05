@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -48,3 +49,7 @@ export default tseslint.config({
   },
 })
 ```
+=======
+# tailwind-password-strength
+A React component for password strength validation using Tailwind CSS.
+>>>>>>> 457d85283e7868380bf5c3927d727cb5f4454a17
