@@ -24,7 +24,6 @@ type PasswordStrengthProps = {
 };
 
 const tailwindPasswordStrength: React.FC<PasswordStrengthProps> = ({
-    register,
     error = false,
     passwordCriteria = {
         minLength: 8,
